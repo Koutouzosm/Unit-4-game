@@ -16,45 +16,44 @@
            <h1 class="text-center">
                 <strong>Crystal Collector!</strong> <hr>
            </h1>
-           <p>Game description here</p>
+           <p class="text-center">Game description here</p>
           </div>
 
     <div class="container container-fluid text-center">
-        <p>Wins!: <span>playerWins</span></p>
-        <p>Losses!: <span>playerLosses</span></p>
+        <h3>Appraiser's Total: <span id="appraiserTotal"></span></h3>
+        <h4>Your appraisal: <span id="userAppraisal"></span></h4>
+        <p>Wins: <span id="playerWins"></span></p>
+        <p>Losses: <span id="playerLosses"></span></p>
+
     </div>
 
 
 
     <div class="card-deck">
         <div class="card">
-            <img src="assets/images/Amethyst.jpeg" class="crystal" alt="Amethyst Crystal">
+            <img src="assets/images/Amethyst.jpeg" id="abtn" class="crystal crystaValue" alt="Amethyst Crystal">
               <div class="card-body text-center">
                 <h5 class="card-title">Amethyst</h5>
-                    <a href="#" class="btn btn-primary">Appraise</a>
               </div>
            </div>
         <div class="card">
-            <img src="assets/images/Diamond.jpeg" class="crystal" alt="Diamond Crystal">
+            <img src="assets/images/Diamond.jpeg" id="dbtn" class="crystal crystalValue" alt="Diamond Crystal">
                <div class="card-body text-center">
                     <h5 class="card-title">Diamond</h5>
-                        <a href="#" class="btn btn-primary">Appraise</a>
               </div>
            </div>
         <div class="card">
-            <img src="assets/images/Emerald.jpeg" class="crystal" alt="Emerald Crystal">
+            <img src="assets/images/Emerald.jpeg" id="ebtn" class="crystal crystalValue" alt="Emerald Crystal">
                 <div class="card-body text-center">
                     <h5 class="card-title">Emerald</h5>
-                        <a href="#" class="btn btn-primary">Appraise</a>
             </div>
           </div>
-      <div class="card">
-            <img src="assets/images/Topaz.jpeg" class="crystal" alt="Topaz">
+        <div class="card">
+            <img src="assets/images/Topaz.jpeg" id="tbtn" class="crystal crystalValue" alt="Topaz">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Topaz Crystal</h5>
-                        <a href="#" class="btn btn-primary">Appraise</a>
-            /div>
+                    <h5 class="card-title">Topaz</h5>
               </div>
+          </div>
      </div>
 
 
@@ -71,5 +70,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
