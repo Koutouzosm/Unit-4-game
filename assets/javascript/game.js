@@ -1,53 +1,67 @@
 $(document).ready(function() {
 
-// selecting a random number for compGuess
-var compGuess=Math.floor(Math.random()*81) + 19;
-
 var playerWinsCounter = 0;
 var playerLossesCounter = 0;
+var userAppraisal = 0;
+    
+function newGame() {
+// selecting a random number for compGuess
+var compGuess=Math.floor(Math.random()*81) + 19;
 
 // this is writing new number to Appraiser's total
 $("#appraiserTotal").text(compGuess);
 
+userAppraisal = 0;    
+    
+}
+
 // giving values to gem buttons
 $(".crystalValue").attr("value", 15);
-$(".crystalValue").attr("value", 5);
-$(".crystalValue").attr("value", 1);
-$(".crystalValue").attr("value", 10);
+$(".crystalValue1").attr("value", 5);
+$(".crystalValue2").attr("value", 1);
+$(".crystalValue3").attr("value", 10);
 
-// new game fuction
-function newGame() {
-    $("#userApprasal") = 0,
 
-}
 // Crystal on click function
-$(".Crystal").on("click", function() {
+$(".crystal").on("click", function() {
+
+// use jQuery to get valua of crystal clicked
+var crystalValue = $(this).attr("value")
+console.log(crystalValue)
+
 // Converts crystalValue to a number
 crystalValue = parseInt(crystalValue);
+
 // For every cyrstalValue clicked need to add to userAppraisal
 userAppraisal += crystalValue;
+
 // write to page
-$("#userAppraisal").text(crystalValue);
+$("#userAppraisal").text(userAppraisal);
+
+// Game logic goes here to know when  to check on click to check game instances
+if (userAppraisal === compGuess) {
+    // player win count increment
+    playerWinsCounter++
+    // write to page
+    $("#playerWins").text(playerWinsCounter)
+
+    // need to run reset after player wins
+    newGame();
+}
+
+else if (userAppraisal > compGuess) {
+    // player loss count decrement
+    playerLossesCounter++
+    // write to page
+    $("#playerLosses").text(playerLossesCounter)
+
+    // need to run reset after player losses
+    newGame();
+}
+
 });
 
-// Game logic
-if (userAppraisal === appraiserTotal) {
-    playerWinsCounter++
-    $("#playerWins").text(playerWinsCounter)
-}
-else (userAppraisal > appraiserTotal) {
-    playerLossesCounter++
-    $("#playerLosses").text(playerLossesCounter)
-}
-
-
-
-
-
-
-
-
-
+newGame()
 
 
 
