@@ -1,17 +1,24 @@
 $(document).ready(function() {
 
+    // Global variables
 var playerWinsCounter = 0;
 var playerLossesCounter = 0;
 var userAppraisal = 0;
+// NEED TO MAKE THIS GLOBAL FOR MATH.RANDOM!!!
+var compGuess;
     
+// newGame function
 function newGame() {
 // selecting a random number for compGuess
-var compGuess=Math.floor(Math.random()*81) + 19;
+compGuess=Math.floor(Math.random()*81) + 19;
 
 // this is writing new number to Appraiser's total
 $("#appraiserTotal").text(compGuess);
 
-userAppraisal = 0;    
+// setting userAppraisal back to 0 on newGame()
+userAppraisal = 0;
+//  must reset to page
+$("#userAppraisal").text(userAppraisal)
     
 }
 
@@ -27,7 +34,6 @@ $(".crystal").on("click", function() {
 
 // use jQuery to get valua of crystal clicked
 var crystalValue = $(this).attr("value")
-console.log(crystalValue)
 
 // Converts crystalValue to a number
 crystalValue = parseInt(crystalValue);
@@ -40,8 +46,10 @@ $("#userAppraisal").text(userAppraisal);
 
 // Game logic goes here to know when  to check on click to check game instances
 if (userAppraisal === compGuess) {
+
     // player win count increment
     playerWinsCounter++
+
     // write to page
     $("#playerWins").text(playerWinsCounter)
 
@@ -50,8 +58,10 @@ if (userAppraisal === compGuess) {
 }
 
 else if (userAppraisal > compGuess) {
+
     // player loss count decrement
     playerLossesCounter++
+
     // write to page
     $("#playerLosses").text(playerLossesCounter)
 
